@@ -1,4 +1,5 @@
 import type { ComponentDefinition } from '../../playground';
+
 import styles from './ComponentList.module.css';
 
 interface ComponentListProps {

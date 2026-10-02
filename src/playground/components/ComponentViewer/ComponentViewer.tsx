@@ -1,7 +1,9 @@
 import { useId, type ReactNode } from 'react';
+
 import type { SourceFile } from '../../types';
 import { CodeViewer } from '../CodeViewer/CodeViewer';
 import { PropsPanel } from '../PropsPanel/PropsPanel';
+
 import styles from './ComponentViewer.module.css';
 
 interface ComponentViewerProps {

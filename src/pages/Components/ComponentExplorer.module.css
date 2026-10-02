@@ -1,0 +1,73 @@
+.viewer {
+  min-width: 0;
+  padding: 24px;
+}
+
+.componentHeading {
+  margin-bottom: 24px;
+}
+
+.componentHeading h2 {
+  @apply text-2xl font-semibold;
+  margin-bottom: 6px;
+}
+
+.componentHeading p {
+  @apply text-sm text-lab-muted;
+}
+
+.emptyPreview {
+  @apply flex flex-col items-center justify-center text-center;
+  min-height: 200px;
+  max-width: 380px;
+  margin-inline: auto;
+  padding: 20px 10px;
+}
+
+.emptyIcon {
+  @apply flex items-center justify-center rounded-lg font-mono text-2xl text-lab-link bg-lab-sky-soft;
+  border: 1px solid var(--lab-border);
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+}
+
+.srOnly {
+  @apply sr-only;
+}
+
+.emptyPreview .emptyTitle {
+  @apply text-lg font-semibold;
+  color: var(--lab-ink);
+  margin-bottom: 8px;
+}
+
+.emptyPreview p:not(.emptyTitle),
+.emptyControls {
+  @apply text-sm text-lab-muted;
+}
+
+@media (max-width: 1000px) {
+  .workspace {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .viewer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .heading {
+    @apply items-start flex-col gap-4;
+    margin-bottom: 24px;
+  }
+
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .viewer {
+    padding: 16px;
+  }
+}

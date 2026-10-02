@@ -1,5 +1,7 @@
 import { useId, useState } from 'react';
+
 import type { SourceFile } from '../../types';
+
 import styles from './CodeViewer.module.css';
 
 interface CodeViewerProps {

@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it } from 'vitest';
 import type { ComponentDefinition } from '../../playground';
+
 import { ComponentsPage } from './ComponentsPage';
 
 // These fixtures verify the explorer; they are not published library components.

@@ -1,4 +1,5 @@
 import { useId, type ReactNode } from 'react';
+
 import styles from './PropsPanel.module.css';
 
 interface PropsPanelProps {
