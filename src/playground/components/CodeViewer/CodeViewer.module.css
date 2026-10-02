@@ -1,0 +1,74 @@
+.panel {
+  @apply min-w-0 overflow-hidden rounded-xl border border-lab-border bg-lab-white;
+  border-style: solid;
+}
+
+.header {
+  @apply flex flex-wrap items-center justify-between gap-3 border-b border-lab-border px-5 py-3;
+  border-bottom-style: solid;
+}
+
+.header h3 {
+  @apply text-sm font-semibold text-lab-ink;
+}
+
+.viewOptions {
+  @apply flex gap-1 rounded-lg bg-lab-sky-soft p-1;
+}
+
+.viewButton {
+  @apply cursor-pointer rounded-md border border-transparent bg-transparent px-3 py-1.5 text-xs font-medium text-lab-muted;
+  border-style: solid;
+}
+
+.viewButton:hover {
+  @apply text-lab-ink;
+}
+
+.viewButton[aria-pressed='true'] {
+  @apply border-lab-border bg-lab-white text-lab-link;
+}
+
+.description {
+  @apply flex flex-wrap items-center justify-between gap-3 px-5 py-4;
+}
+
+.description p {
+  @apply text-xs leading-relaxed text-lab-muted;
+}
+
+.filePicker {
+  @apply flex min-w-0 items-center gap-3;
+}
+
+.filePicker label {
+  @apply text-xs font-medium text-lab-muted;
+}
+
+.fileSelect {
+  @apply min-w-0 max-w-full cursor-pointer appearance-none rounded-md border border-lab-border bg-lab-white bg-no-repeat py-1.5 pl-3 pr-10 font-mono text-xs text-lab-ink;
+  border-style: solid;
+  background-image: url('../../../assets/icons/chevron-down.svg');
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.fileSelect:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-lab-link;
+}
+
+.code {
+  @apply m-0 overflow-auto border-t border-lab-border bg-lab-sky-soft p-5 font-mono text-xs leading-7 text-lab-ink;
+  border-top-style: solid;
+  max-height: 30rem;
+  tab-size: 2;
+}
+
+.code code {
+  font: inherit;
+}
+
+.empty {
+  @apply border-t border-lab-border bg-lab-sky-soft px-5 py-8 text-sm text-lab-muted;
+  border-top-style: solid;
+}

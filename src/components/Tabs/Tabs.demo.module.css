@@ -1,0 +1,35 @@
+.preview {
+  @apply h-[140px] w-full;
+}
+
+.content {
+  @apply px-2 py-4;
+}
+
+.controls {
+  @apply flex flex-col gap-5;
+}
+
+.field {
+  @apply flex min-w-0 flex-col gap-2 text-sm text-lab-ink;
+}
+
+.field > span {
+  @apply font-medium;
+}
+
+.field input {
+  @apply min-h-[38px] min-w-0 w-full rounded-md border border-lab-border bg-lab-white px-[10px] py-2 text-sm text-lab-ink;
+  border-style: solid;
+}
+
+.checkbox {
+  @apply inline-flex items-center gap-2 text-sm;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--lab-link);
+}

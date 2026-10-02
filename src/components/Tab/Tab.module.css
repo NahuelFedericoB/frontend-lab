@@ -1,0 +1,23 @@
+.tab {
+  @apply z-10 h-[42px] cursor-pointer list-none rounded-[4px] rounded-b-none border border-transparent border-b-lab-border px-[0.55rem] py-[0.5rem] text-lab-ink outline-none transition-shadow duration-100;
+  border-style: solid;
+}
+
+.tab:hover {
+  @apply border-lab-border;
+}
+
+.tab.isActive {
+  @apply border border-lab-border border-b-lab-white text-lab-link;
+}
+
+.disabled {
+  @apply pointer-events-none cursor-default;
+  color: color-mix(in srgb, var(--lab-muted) 50%, var(--lab-white));
+}
+
+.tabContent {
+  @apply absolute left-0 top-[41px] w-full border-t border-lab-border;
+  border-top-style: solid;
+  height: calc(100% - 42px);
+}

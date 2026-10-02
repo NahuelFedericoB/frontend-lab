@@ -1,0 +1,12 @@
+.tabs {
+  @apply relative mb-0 flex flex-row flex-wrap rounded-tl-[4px] rounded-tr-[4px] pl-0 outline-none transition-shadow duration-100;
+}
+
+.tabs:focus-visible {
+  @apply outline outline-2 outline-offset-0 outline-lab-sky;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.fullHeight {
+  @apply h-full;
+}

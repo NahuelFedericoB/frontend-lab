@@ -1,0 +1,125 @@
+.button {
+  --button-danger: #b42318;
+  --button-success: #187048;
+  @apply inline-block cursor-pointer border-0 p-0 text-base font-normal text-lab-ink outline-none transition-shadow duration-100 ease-in-out;
+  font-family: inherit;
+}
+
+.button:focus {
+  @apply outline-2 -outline-offset-2 outline-lab-link;
+  outline-style: solid;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lab-sky) 35%, transparent);
+}
+
+.primary {
+  @apply bg-lab-sky;
+}
+
+.primary:hover {
+  background-color: color-mix(in srgb, var(--lab-sky) 90%, var(--lab-ink));
+}
+
+.primary:focus {
+  @apply bg-lab-sky;
+}
+
+.light {
+  @apply bg-lab-sky-soft text-lab-ink;
+}
+
+.light:hover {
+  @apply bg-lab-border;
+}
+
+.light:focus {
+  @apply bg-lab-sky-soft;
+}
+
+.danger {
+  @apply bg-[var(--button-danger)] text-lab-white;
+}
+
+.danger:hover,
+.danger:focus {
+  background-color: color-mix(in srgb, var(--button-danger) 80%, var(--lab-ink));
+}
+
+.danger:focus {
+  @apply outline-2 -outline-offset-2 outline-red-300;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--button-danger) 25%, transparent);
+}
+
+.success {
+  @apply bg-[var(--button-success)] text-lab-white;
+}
+
+.success:hover,
+.success:focus {
+  background-color: color-mix(in srgb, var(--button-success) 80%, var(--lab-ink));
+}
+
+.success:focus {
+  @apply outline-2 -outline-offset-2 outline-green-300;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--button-success) 25%, transparent);
+}
+
+.warning {
+  @apply bg-lab-sun text-lab-ink;
+}
+
+.warning:hover,
+.warning:focus {
+  background-color: color-mix(in srgb, var(--lab-sun) 90%, var(--lab-ink));
+}
+
+.warning:focus {
+  outline-color: color-mix(in srgb, var(--lab-sun) 50%, var(--lab-ink));
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lab-sun) 35%, transparent);
+}
+
+.size-xxs {
+  @apply h-[1rem] rounded-[1.92rem] px-4 text-xs;
+}
+
+.size-xs {
+  @apply h-[1.5rem] rounded-[1.9375rem] px-4 text-sm;
+}
+
+.size-sm {
+  @apply h-[1.875rem] rounded-[1.9375rem] px-4 py-1 text-sm;
+}
+
+.size-md {
+  @apply rounded-[2.1875rem] px-4 py-[0.375rem] text-base;
+}
+
+.size-lg {
+  @apply rounded-[3rem] px-4 py-2 text-xl;
+}
+
+.button.disabled {
+  @apply pointer-events-none bg-lab-sky-soft text-lab-muted opacity-100;
+}
+
+.button.light:disabled {
+  @apply pointer-events-none bg-lab-sky-soft text-lab-muted opacity-100;
+}
+
+.button.danger:disabled {
+  @apply text-[var(--button-danger)];
+  background-color: color-mix(in srgb, var(--button-danger) 12%, var(--lab-white));
+}
+
+.button.success:disabled {
+  @apply text-[var(--button-success)];
+  background-color: color-mix(in srgb, var(--button-success) 12%, var(--lab-white));
+}
+
+.button.warning:disabled {
+  @apply text-lab-muted;
+  background-color: color-mix(in srgb, var(--lab-sun) 15%, var(--lab-white));
+}
+
+.noPointerEvents {
+  @apply pointer-events-none;
+}

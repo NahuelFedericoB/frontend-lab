@@ -1,0 +1,39 @@
+.header {
+  border-bottom: 1px solid var(--lab-border);
+}
+
+.content {
+  @apply flex items-center justify-between gap-5;
+  width: min(1280px, calc(100% - 80px));
+  min-height: 80px;
+  margin-inline: auto;
+}
+
+.brand {
+  @apply inline-flex items-center gap-3 text-base;
+}
+
+.initials {
+  @apply text-lg font-bold;
+}
+
+.separator {
+  @apply text-lab-muted;
+}
+
+.signature {
+  @apply text-sm text-lab-muted;
+}
+
+@media (max-width: 800px) {
+  .content {
+    width: calc(100% - 36px);
+    min-height: 72px;
+  }
+}
+
+@media (max-width: 480px) {
+  .signature {
+    display: none;
+  }
+}

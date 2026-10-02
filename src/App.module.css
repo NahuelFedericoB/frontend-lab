@@ -1,0 +1,35 @@
+.main {
+  width: min(1280px, calc(100% - 80px));
+  margin: 0 auto;
+  padding-block: 52px 64px;
+}
+
+.skipLink {
+  @apply fixed z-10 rounded bg-lab-ink text-lab-white;
+  top: -100px;
+  left: 1rem;
+  padding: 12px 18px;
+}
+
+.skipLink:focus {
+  top: 1rem;
+}
+
+.footer {
+  @apply flex flex-wrap justify-between gap-3 text-sm text-lab-muted;
+  width: min(1280px, calc(100% - 80px));
+  border-top: 1px solid var(--lab-border);
+  margin-inline: auto;
+  padding-block: 24px 32px;
+}
+
+@media (max-width: 800px) {
+  .main,
+  .footer {
+    width: calc(100% - 36px);
+  }
+
+  .main {
+    padding-block: 32px 40px;
+  }
+}

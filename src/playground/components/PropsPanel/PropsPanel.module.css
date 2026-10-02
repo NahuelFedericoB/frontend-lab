@@ -1,0 +1,25 @@
+.panel {
+  @apply min-w-0 overflow-hidden rounded-xl border border-lab-border bg-lab-white;
+  border-style: solid;
+}
+
+.header {
+  @apply border-b border-lab-border px-5 py-4;
+  border-bottom-style: solid;
+}
+
+.header h3 {
+  @apply text-sm font-semibold text-lab-ink;
+}
+
+.header p {
+  @apply mt-1 text-xs leading-relaxed text-lab-muted;
+}
+
+.content {
+  @apply p-5;
+}
+
+.empty {
+  @apply text-sm leading-relaxed text-lab-muted;
+}

@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+/build
+/dist
+/coverage
+.env
+.env.*
+!.env.example
+*.local
+*.tsbuildinfo
+vite.config.*.timestamp-*
+/storybook-static

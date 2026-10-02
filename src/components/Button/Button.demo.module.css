@@ -1,0 +1,52 @@
+.controls {
+  @apply flex flex-col gap-5;
+}
+
+.field {
+  @apply flex flex-col gap-2 text-sm text-lab-ink;
+  min-width: 0;
+}
+
+.field > span {
+  @apply font-medium;
+}
+
+.field input,
+.field select {
+  @apply w-full rounded-md bg-lab-white text-sm text-lab-ink;
+  border: 1px solid var(--lab-border);
+  min-width: 0;
+  min-height: 38px;
+  padding: 8px 10px;
+}
+
+.field select {
+  @apply appearance-none bg-no-repeat pr-10;
+  background-image: url('../../assets/icons/chevron-down.svg');
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.field select:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-lab-link;
+}
+
+.row {
+  @apply grid grid-cols-2 gap-3;
+}
+
+.checkbox {
+  @apply inline-flex items-center gap-2 text-sm;
+}
+
+.checkbox input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--lab-link);
+}
+
+.hint {
+  @apply text-xs text-lab-muted;
+  margin-top: 6px;
+}
