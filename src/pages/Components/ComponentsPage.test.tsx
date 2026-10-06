@@ -40,6 +40,44 @@ const components: readonly ComponentDefinition[] = [
 ];
 
 describe('ComponentsPage', () => {
+  it('integrates Pagination with parent-controlled navigation and its own source files', async () => {
+    const user = userEvent.setup();
+    render(<ComponentsPage />);
+    const sidebar = within(screen.getByRole('navigation', { name: 'Components' }));
+
+    await user.click(sidebar.getByRole('button', { name: 'Pagination' }));
+    const pagination = within(screen.getByRole('list', { name: 'Pagination' }));
+    expect(pagination.getByRole('button', { name: 'first' })).toBeDisabled();
+
+    await user.click(pagination.getByRole('button', { name: '4' }));
+    pagination.getByRole('button', { name: 'next' }).focus();
+    await user.keyboard('{Enter}');
+    expect(pagination.getByRole('button', { name: '5' })).toBeInTheDocument();
+    expect(pagination.queryByRole('button', { name: '4' })).not.toBeInTheDocument();
+
+    await user.click(pagination.getByRole('button', { name: 'last' }));
+    expect(pagination.getByRole('button', { name: 'next' })).toBeDisabled();
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Pages' }), '5');
+    expect(pagination.getByRole('button', { name: 'last' })).toBeDisabled();
+
+    await user.selectOptions(screen.getByRole('combobox', { name: 'Pages per segment' }), '0');
+    const simplePagination = within(screen.getByRole('list', { name: 'Pagination' }));
+    expect(simplePagination.queryByRole('button', { name: '...' })).not.toBeInTheDocument();
+    expect(simplePagination.getAllByRole('button')).toHaveLength(9);
+
+    await user.click(screen.getByRole('button', { name: 'Source' }));
+    expect(
+      within(screen.getByRole('combobox', { name: 'File' }))
+        .getAllByRole('option')
+        .map((option) => option.textContent),
+    ).toEqual([
+      'Pagination.tsx',
+      'Pagination.types.ts',
+      'Pagination.module.css',
+      'Pagination.test.tsx',
+    ]);
+  });
+
   it('integrates the DataGrid demo with parent-controlled sorting, selection, and source tests', async () => {
     const user = userEvent.setup();
     const alert = vi.spyOn(window, 'alert').mockImplementation(() => {});

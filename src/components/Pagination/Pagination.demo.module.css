@@ -1,0 +1,7 @@
+.preview {
+  @apply max-w-full overflow-auto p-1;
+}
+
+.preview > ul {
+  @apply m-0 w-max;
+}

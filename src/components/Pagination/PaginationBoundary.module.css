@@ -1,0 +1,61 @@
+.paginationItem {
+  @apply list-none;
+}
+
+.pageButton {
+  @apply relative flex cursor-pointer items-center justify-center border border-solid border-lab-border bg-lab-white p-0 text-center text-lab-link outline-none transition-shadow duration-100;
+}
+
+.pageButton:hover {
+  @apply bg-lab-sky-soft;
+}
+
+.pageButton:focus {
+  @apply z-[2] outline-2 -outline-offset-2 outline-lab-sky;
+  outline-style: solid;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.size-sm {
+  @apply h-[31px] w-[23px] text-sm;
+}
+
+.size-md {
+  @apply h-[38px] w-[32px] text-base;
+}
+
+.size-lg {
+  @apply h-[46px] w-[40px] text-xl;
+}
+
+.isActive {
+  @apply z-10 border-lab-link bg-lab-link text-lab-white;
+}
+
+.isActive:hover {
+  @apply bg-lab-link;
+}
+
+.isDisabled,
+.pageButton:disabled {
+  @apply cursor-not-allowed border-lab-border bg-lab-sky-soft text-lab-muted opacity-50;
+}
+
+.symbols-sm {
+  @apply text-[1rem];
+}
+.symbols-md {
+  @apply text-[1.5rem];
+}
+.symbols-lg {
+  @apply text-[1.8rem];
+}
+.roundedLeft {
+  @apply rounded-l-[0.25rem];
+}
+.roundedRight {
+  @apply rounded-r-[0.25rem];
+}
+.accessibleLabel {
+  @apply sr-only;
+}

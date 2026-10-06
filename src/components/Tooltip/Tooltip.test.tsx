@@ -23,13 +23,19 @@ describe('Tooltip', () => {
     vi.useFakeTimers();
     const onshow = vi.fn();
     const onhide = vi.fn();
+
     renderTooltip({ onshow, onhide });
+
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
+
     fireEvent.mouseEnter(screen.getByRole('button'));
+
     expect(screen.getByRole('tooltip')).toHaveTextContent('Drag to reorder columns');
     expect(screen.getByRole('tooltip').parentElement).toBe(document.body);
     expect(onshow).toHaveBeenCalledTimes(1);
+
     fireEvent.mouseLeave(screen.getByRole('button'));
+
     expect(screen.getByRole('tooltip')).toHaveStyle({ opacity: '0' });
     act(() => vi.advanceTimersByTime(300));
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
@@ -40,11 +46,16 @@ describe('Tooltip', () => {
     vi.useFakeTimers();
     const onshow = vi.fn();
     renderTooltip({ onshow });
+
     fireEvent.mouseEnter(screen.getByRole('button'));
     fireEvent.mouseLeave(screen.getByRole('button'));
+
     act(() => vi.advanceTimersByTime(150));
+
     fireEvent.mouseEnter(screen.getByRole('button'));
+
     act(() => vi.advanceTimersByTime(300));
+
     expect(screen.getByRole('tooltip')).toHaveStyle({ opacity: '1' });
     expect(onshow).toHaveBeenCalledTimes(1);
   });
@@ -53,10 +64,14 @@ describe('Tooltip', () => {
     vi.useFakeTimers();
     const onhide = vi.fn();
     const { unmount } = renderTooltip({ onhide });
+
     fireEvent.mouseEnter(screen.getByRole('button'));
     fireEvent.mouseLeave(screen.getByRole('button'));
+
     unmount();
+
     act(() => vi.advanceTimersByTime(300));
+
     expect(screen.queryByRole('tooltip')).not.toBeInTheDocument();
     expect(onhide).not.toHaveBeenCalled();
   });

@@ -1,8 +1,11 @@
+import { CheckboxDemo } from '../components/Checkbox/Checkbox.demo';
+import { TooltipDemo } from '../components/Tooltip/Tooltip.demo';
 import { ButtonDemo } from '../components/Button/Button.demo';
 import { TabDemo } from '../components/Tab/Tab.demo';
 import { TabsDemo } from '../components/Tabs/Tabs.demo';
 import { DataGridDemo } from '../components/DataGrid/DataGrid.demo';
 import { SpinnerDemo } from '../components/Spinner/Spinner.demo';
+import { PaginationDemo } from '../components/Pagination/Pagination.demo';
 import type { ComponentDefinition } from './types';
 
 // Add each reviewed React component here with its dedicated demo.
@@ -13,6 +16,14 @@ export const componentRegistry: readonly ComponentDefinition[] = [
     description: 'A button with five color variants, five sizes, and keyboard interaction.',
     category: 'Actions',
     Demo: ButtonDemo,
+  },
+  {
+    slug: 'checkbox',
+    name: 'Checkbox',
+    description:
+      'A checkbox with three sizes, validation styles, and disabled and indeterminate states.',
+    category: 'Inputs',
+    Demo: CheckboxDemo,
   },
   {
     slug: 'tabs',
@@ -29,12 +40,27 @@ export const componentRegistry: readonly ComponentDefinition[] = [
     Demo: TabDemo,
   },
   {
+    slug: 'pagination',
+    name: 'Pagination',
+    description: 'Controlled pagination with simple and segmented views and three sizes.',
+    category: 'Navigation',
+    Demo: PaginationDemo,
+  },
+  {
     slug: 'data-grid',
     name: 'DataGrid',
     description:
       'A data grid with column reordering, resizing, row selection, and custom cell formatters.',
     category: 'Data display',
     Demo: DataGridDemo,
+  },
+  {
+    slug: 'tooltip',
+    name: 'Tooltip',
+    description:
+      'A tooltip with custom content and four placements, shown when hovering over its target.',
+    category: 'Feedback',
+    Demo: TooltipDemo,
   },
   {
     slug: 'spinner',

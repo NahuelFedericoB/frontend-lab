@@ -1,0 +1,27 @@
+.paginationItem {
+  @apply hidden list-none;
+}
+
+.pageButton {
+  @apply relative flex items-center justify-center border border-solid border-lab-border p-0 text-center;
+}
+
+.pageButton:disabled {
+  @apply cursor-not-allowed bg-lab-sky-soft text-lab-muted opacity-50;
+}
+
+.size-sm {
+  @apply h-[31px] w-[23px] text-sm;
+}
+
+.size-md {
+  @apply h-[38px] w-[32px] text-base;
+}
+
+.size-lg {
+  @apply h-[46px] w-[40px] text-xl;
+}
+
+.isVisible {
+  @apply block;
+}

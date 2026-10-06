@@ -1,0 +1,3 @@
+.pagination {
+  @apply mt-0 flex list-none flex-row rounded-[0.25rem] p-0;
+}

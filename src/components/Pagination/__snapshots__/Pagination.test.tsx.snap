@@ -1,0 +1,99 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Pagination /> > should render correctly 1`] = `
+<div>
+  <ul
+    class="_pagination_de4934"
+  >
+    <li
+      class="_paginationItem_45fa66"
+    >
+      <button
+        class="_pageButton_45fa66 _size-md_45fa66 _isDisabled_45fa66 _roundedLeft_45fa66"
+        disabled=""
+      >
+        <span
+          aria-hidden="true"
+          class="_symbols-md_45fa66"
+        >
+          «
+        </span>
+        <span
+          class="_accessibleLabel_45fa66"
+        >
+          first
+        </span>
+      </button>
+    </li>
+    <li
+      class="_paginationItem_45fa66"
+    >
+      <button
+        class="_pageButton_45fa66 _size-md_45fa66 _isDisabled_45fa66"
+        disabled=""
+      >
+        <span
+          aria-hidden="true"
+          class="_symbols-md_45fa66"
+        >
+          ‹
+        </span>
+        <span
+          class="_accessibleLabel_45fa66"
+        >
+          previous
+        </span>
+      </button>
+    </li>
+    <li
+      class="_paginationItem_eaca94"
+    >
+      <button
+        class="_pageButton_eaca94 _size-md_eaca94 _isActive_eaca94"
+      >
+        1
+      </button>
+    </li>
+    <li
+      class="_paginationItem_45fa66"
+    >
+      <button
+        class="_pageButton_45fa66 _size-md_45fa66 _isDisabled_45fa66"
+        disabled=""
+      >
+        <span
+          aria-hidden="true"
+          class="_symbols-md_45fa66"
+        >
+          ›
+        </span>
+        <span
+          class="_accessibleLabel_45fa66"
+        >
+          next
+        </span>
+      </button>
+    </li>
+    <li
+      class="_paginationItem_45fa66"
+    >
+      <button
+        class="_pageButton_45fa66 _size-md_45fa66 _isDisabled_45fa66 _roundedRight_45fa66"
+        disabled=""
+      >
+        <span
+          aria-hidden="true"
+          class="_symbols-md_45fa66"
+        >
+          »
+        </span>
+        <span
+          class="_accessibleLabel_45fa66"
+        >
+          last
+        </span>
+      </button>
+    </li>
+  </ul>
+</div>
+`;
