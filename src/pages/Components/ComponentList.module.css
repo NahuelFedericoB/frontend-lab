@@ -11,11 +11,6 @@
   padding-inline: 8px;
 }
 
-.empty {
-  @apply text-sm text-lab-muted;
-  padding-inline: 8px;
-}
-
 .group + .group {
   margin-top: 28px;
 }

@@ -48,25 +48,12 @@
 }
 
 @media (max-width: 1000px) {
-  .workspace {
-    grid-template-columns: 190px minmax(0, 1fr);
-  }
-
   .viewer {
     padding: 20px;
   }
 }
 
 @media (max-width: 760px) {
-  .heading {
-    @apply items-start flex-col gap-4;
-    margin-bottom: 24px;
-  }
-
-  .workspace {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .viewer {
     padding: 16px;
   }

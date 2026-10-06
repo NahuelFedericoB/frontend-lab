@@ -1,0 +1,68 @@
+.headerCell {
+  @apply relative flex flex-1 flex-row items-center overflow-hidden text-[0.6875rem] font-bold uppercase text-lab-muted transition-shadow duration-100;
+}
+
+.headerCell:focus-visible {
+  @apply outline-2 outline-lab-sky -outline-offset-2;
+  outline-style: solid;
+}
+
+.headerCellContent {
+  @apply flex h-full w-full flex-row items-center gap-x-1 overflow-hidden text-ellipsis whitespace-nowrap pl-2;
+}
+
+.headerText {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.clickable {
+  @apply cursor-pointer;
+}
+
+.clickable:hover,
+.clickable:focus-visible {
+  @apply bg-lab-sky-soft text-lab-link;
+}
+
+.sortIcon {
+  @apply flex shrink-0;
+}
+
+.sortIcon svg {
+  @apply h-3.5 w-3.5;
+}
+
+.gripIcon {
+  @apply invisible ml-auto shrink-0 pr-[9px];
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+
+.gripIcon svg {
+  @apply block h-3.5 w-3;
+}
+
+.headerCell:hover .gripIcon {
+  @apply visible;
+}
+
+.resizeHandle {
+  @apply absolute top-0 right-0 z-10 flex h-full w-2.5 cursor-col-resize flex-row justify-center py-0.5 transition-colors duration-100;
+}
+
+.line {
+  @apply invisible relative left-1 h-full w-px bg-lab-muted;
+}
+
+.resizeHandle:hover .line {
+  @apply visible;
+}
+
+.dragHover {
+  @apply bg-lab-sky-soft;
+}
+
+.hideCell {
+  @apply hidden;
+}

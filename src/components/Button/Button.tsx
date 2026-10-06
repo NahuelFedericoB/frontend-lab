@@ -1,6 +1,7 @@
 import handleKeyDown from '../../utils/handleKeyDown';
 
 import type { ButtonProps } from './Button.types';
+
 import styles from './Button.module.css';
 
 export function Button({
@@ -30,11 +31,11 @@ export function Button({
 
   return (
     <button
-      id={id}
+      id={id ?? undefined}
       disabled={disabled}
-      type={type}
+      type={type ?? undefined}
       tabIndex={disableFocus ? -1 : undefined}
-      aria-label={ariaLabel}
+      aria-label={ariaLabel ?? undefined}
       className={classes}
       onClick={onClick}
       onBlur={onBlur}

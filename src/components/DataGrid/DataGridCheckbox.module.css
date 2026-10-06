@@ -1,0 +1,8 @@
+.cell {
+  @apply flex min-w-[48px] flex-row items-center justify-center overflow-hidden whitespace-nowrap text-ellipsis;
+}
+
+.sticky {
+  @apply left-0 z-[1] bg-lab-white;
+  position: sticky;
+}

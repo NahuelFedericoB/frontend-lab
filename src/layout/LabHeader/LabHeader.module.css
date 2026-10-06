@@ -21,8 +21,12 @@
   @apply text-lab-muted;
 }
 
-.signature {
-  @apply text-sm text-lab-muted;
+.backLink {
+  @apply inline-flex items-center gap-2 text-sm text-lab-link;
+}
+
+.backLink:hover {
+  @apply underline underline-offset-4;
 }
 
 @media (max-width: 800px) {
@@ -33,7 +37,12 @@
 }
 
 @media (max-width: 480px) {
-  .signature {
+  .content {
+    @apply flex-wrap gap-3 py-4;
+  }
+
+  .initials,
+  .separator {
     display: none;
   }
 }

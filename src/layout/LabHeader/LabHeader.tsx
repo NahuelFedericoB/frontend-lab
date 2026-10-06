@@ -1,6 +1,10 @@
 import styles from './LabHeader.module.css';
 
 export function LabHeader() {
+  const portfolioUrl = import.meta.env.DEV
+    ? 'http://127.0.0.1:5173/#frontend-lab'
+    : '/#frontend-lab';
+
   return (
     <header className={styles.header}>
       <div className={styles.content}>
@@ -12,7 +16,9 @@ export function LabHeader() {
           </span>
           <span>Frontend Lab</span>
         </a>
-        <p className={styles.signature}>by Nahuel Bordon</p>
+        <a className={styles.backLink} href={portfolioUrl}>
+          <span aria-hidden="true">←</span> Back to portfolio
+        </a>
       </div>
     </header>
   );

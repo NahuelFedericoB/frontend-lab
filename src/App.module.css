@@ -4,6 +4,25 @@
   padding-block: 52px 64px;
 }
 
+.embedded {
+  width: 100%;
+  padding: 16px;
+}
+
+:global(body):has(.embedded) {
+  min-width: 0;
+}
+
+.srOnly {
+  @apply sr-only;
+}
+
+@media (max-width: 480px) {
+  .embedded {
+    padding: 8px;
+  }
+}
+
 .skipLink {
   @apply fixed z-10 rounded bg-lab-ink text-lab-white;
   top: -100px;

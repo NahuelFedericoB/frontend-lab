@@ -1,0 +1,19 @@
+.dataGrid {
+  @apply flex flex-col;
+}
+
+.gridOverflow {
+  @apply min-w-min;
+}
+
+.loadingIndicator {
+  @apply flex h-full min-h-[100px] w-full flex-col items-center justify-center overflow-hidden pt-3;
+}
+
+.fullHeight {
+  @apply h-full;
+}
+
+.noDataMessage {
+  @apply flex h-full min-h-[100px] w-full flex-row items-center justify-center text-2xl text-lab-muted;
+}

@@ -11,6 +11,6 @@ if (!container) {
 
 createRoot(container).render(
   <StrictMode>
-    <App />
+    <App embedded={new URLSearchParams(window.location.search).get('embed') === 'true'} />
   </StrictMode>,
 );

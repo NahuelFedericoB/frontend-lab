@@ -9,6 +9,7 @@ import tabsSource from './Tabs.tsx?raw';
 import tabsTypesSource from './Tabs.types.ts?raw';
 import tabsStylesSource from './Tabs.module.css?raw';
 import testsSource from './Tabs.test.tsx?raw';
+
 import styles from './Tabs.demo.module.css';
 
 const sources: readonly SourceFile[] = [

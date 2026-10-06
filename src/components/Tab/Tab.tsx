@@ -20,8 +20,8 @@ export function Tab({
   return (
     <>
       <div
-        id={id}
-        aria-label={ariaLabel}
+        id={id ?? undefined}
+        aria-label={ariaLabel ?? undefined}
         role="tab"
         aria-selected={isActive}
         aria-disabled={disabled}

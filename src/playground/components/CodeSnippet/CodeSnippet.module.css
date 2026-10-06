@@ -1,0 +1,115 @@
+.editor {
+  @apply min-w-0 overflow-hidden;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.toolbar {
+  @apply flex;
+  background: #252526;
+  border-bottom: 1px solid #303033;
+}
+
+.file {
+  @apply inline-flex items-center gap-2 min-w-0 font-mono text-xs;
+  padding: 12px 18px;
+  background: #1e1e1e;
+  border-top: 2px solid #74acdf;
+  border-right: 1px solid #303033;
+  overflow-wrap: anywhere;
+}
+
+.fileIcon {
+  @apply shrink-0;
+  color: #74acdf;
+}
+
+.viewport {
+  @apply flex overflow-auto;
+  max-height: 30rem;
+  font:
+    0.8125rem/1.9 'IBM Plex Mono',
+    ui-monospace,
+    monospace;
+  tab-size: 2;
+  scrollbar-color: #555 #1e1e1e;
+  color-scheme: dark;
+}
+
+.viewport:focus-visible {
+  outline: 2px solid #74acdf;
+  outline-offset: -2px;
+}
+
+.gutter {
+  @apply sticky left-0 shrink-0 select-none text-right;
+  min-width: 4.5ch;
+  padding: 18px 12px 18px 16px;
+  background: #1e1e1e;
+  color: #858585;
+  border-right: 1px solid #303033;
+  counter-reset: line;
+}
+
+.gutter span {
+  @apply block;
+  counter-increment: line;
+}
+
+.gutter span::before {
+  content: counter(line);
+}
+
+.code {
+  @apply m-0;
+  padding: 18px 22px;
+  min-width: max-content;
+  font: inherit;
+}
+
+.code code {
+  font: inherit;
+}
+
+.code :global(.hljs-keyword),
+.code :global(.hljs-selector-tag),
+.code :global(.hljs-name) {
+  color: #f92672;
+}
+
+.code :global(.hljs-string),
+.code :global(.hljs-template-tag) {
+  color: #e6db74;
+}
+
+.code :global(.hljs-number),
+.code :global(.hljs-literal) {
+  color: #ae81ff;
+}
+
+.code :global(.hljs-title),
+.code :global(.hljs-selector-class) {
+  color: #a6e22e;
+}
+
+.code :global(.hljs-built_in),
+.code :global(.hljs-type) {
+  color: #66d9ef;
+}
+
+.code :global(.hljs-comment) {
+  color: #93938b;
+}
+
+@media (max-width: 600px) {
+  .viewport {
+    font-size: 0.75rem;
+  }
+  .gutter {
+    padding-left: 12px;
+    padding-right: 10px;
+  }
+  .code {
+    padding-inline: 16px;
+  }
+}

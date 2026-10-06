@@ -1,0 +1,20 @@
+.cell {
+  @apply relative flex flex-1 flex-row items-center overflow-hidden whitespace-nowrap text-ellipsis text-sm text-lab-ink;
+}
+
+.cell::after {
+  @apply absolute top-[4px] right-0 h-[calc(100%-8px)] w-px bg-lab-border content-[''];
+}
+
+.hideDivisors::after,
+.isLast::after {
+  @apply w-0;
+}
+
+.cellContent {
+  @apply w-full overflow-hidden whitespace-nowrap text-ellipsis pl-3;
+}
+
+.hideCell {
+  @apply hidden;
+}

@@ -1,13 +1,15 @@
 import { useState } from 'react';
+
+import keyboardSource from '../../utils/handleKeyDown.ts?raw';
 import { ComponentViewer } from '../../playground/components/ComponentViewer/ComponentViewer';
 import type { SourceFile } from '../../playground/types';
+
 import { Button } from './Button';
 import type { ButtonColor, ButtonSize, ButtonType } from './Button.types';
 import buttonSource from './Button.tsx?raw';
 import stylesSource from './Button.module.css?raw';
 import typesSource from './Button.types.ts?raw';
 import testsSource from './Button.test.tsx?raw';
-import keyboardSource from '../../utils/handleKeyDown.ts?raw';
 import styles from './Button.demo.module.css';
 
 const sources: readonly SourceFile[] = [
@@ -120,7 +122,6 @@ export function ButtonDemo() {
               />
               <span>Disable focus</span>
             </label>
-            <p className={styles.hint}>Skips keyboard focus and ignores pointer interaction.</p>
           </div>
         </div>
       }

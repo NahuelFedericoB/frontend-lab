@@ -1,0 +1,16 @@
+.controls {
+  @apply flex flex-col gap-4;
+}
+
+.checkbox {
+  @apply inline-flex items-center gap-2 text-sm;
+}
+
+.checkbox input {
+  @apply m-0 h-4 w-4;
+  accent-color: var(--lab-link);
+}
+
+.hint {
+  @apply text-xs leading-relaxed text-lab-muted;
+}

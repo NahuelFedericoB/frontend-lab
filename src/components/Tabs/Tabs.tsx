@@ -1,6 +1,7 @@
 import type { KeyboardEvent } from 'react';
 
 import type { TabsProps } from './Tabs.types';
+
 import styles from './Tabs.module.css';
 
 const isElementATab = (element: HTMLDivElement) => element?.getAttribute?.('role') === 'tab';
@@ -122,8 +123,8 @@ export function Tabs({
 
   return (
     <div
-      id={id}
-      aria-label={ariaLabel}
+      id={id ?? undefined}
+      aria-label={ariaLabel ?? undefined}
       className={classes}
       role="tablist"
       tabIndex={0}

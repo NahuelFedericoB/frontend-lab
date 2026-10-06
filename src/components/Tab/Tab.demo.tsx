@@ -1,12 +1,15 @@
 import { useState } from 'react';
+
 import { ComponentViewer } from '../../playground/components/ComponentViewer/ComponentViewer';
 import type { SourceFile } from '../../playground/types';
 import { Tabs } from '../Tabs/Tabs';
+
 import { Tab } from './Tab';
 import tabSource from './Tab.tsx?raw';
 import typesSource from './Tab.types.ts?raw';
 import stylesSource from './Tab.module.css?raw';
 import testsSource from './Tab.test.tsx?raw';
+
 import styles from './Tab.demo.module.css';
 
 const sources: readonly SourceFile[] = [

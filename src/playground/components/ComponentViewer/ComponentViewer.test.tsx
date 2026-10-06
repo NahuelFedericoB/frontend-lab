@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+
 import { ComponentViewer } from './ComponentViewer';
 
-// This fixture exercises the viewer contract; it is not a library component or registry entry.
 function DemoFixture() {
   const [label, setLabel] = useState('Save');
   const [color, setColor] = useState('#74acdf');

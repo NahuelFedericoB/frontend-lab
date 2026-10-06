@@ -30,3 +30,10 @@
   border: 1px solid var(--lab-border);
   padding: 8px 10px;
 }
+
+@media (max-width: 760px) {
+  .heading {
+    @apply items-start flex-col gap-4;
+    margin-bottom: 24px;
+  }
+}

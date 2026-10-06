@@ -1,0 +1,8 @@
+.header {
+  @apply flex min-h-[38px] flex-row border-solid border-lab-border bg-lab-sky-soft;
+  border-width: 1px 0;
+}
+
+.stickyHeader {
+  @apply sticky top-0 z-10 bg-white;
+}

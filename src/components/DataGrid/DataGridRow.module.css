@@ -1,0 +1,31 @@
+.row {
+  @apply flex min-h-[48px] flex-row items-stretch border-b border-solid border-lab-border outline-none transition-shadow duration-100;
+  border-width: 0 0 1px;
+}
+
+.row:focus-visible {
+  @apply outline-2 -outline-offset-2 outline-lab-sky;
+  outline-style: solid;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.clickable:focus-visible,
+.clickable:hover {
+  @apply cursor-pointer bg-lab-sky-soft;
+}
+
+.clickable:hover > [role='cell'] {
+  @apply bg-lab-sky-soft;
+}
+
+.active {
+  @apply bg-lab-border;
+}
+
+.row:global(.stripped):nth-child(even) {
+  @apply bg-lab-sky-soft;
+}
+
+.hideRow {
+  @apply hidden;
+}

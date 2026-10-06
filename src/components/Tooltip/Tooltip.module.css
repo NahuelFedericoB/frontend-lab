@@ -1,0 +1,27 @@
+.tooltip {
+  @apply absolute z-50 rounded px-2 py-0.5 text-center text-sm text-white transition-opacity duration-300 bg-lab-ink;
+}
+
+.tooltip::after {
+  @apply absolute h-0 w-0 border-solid content-[''];
+}
+
+.tooltip-top::after {
+  @apply -bottom-[6px] left-1/2 -translate-x-1/2 border-x-[6px] border-x-transparent border-t-[6px] border-t-lab-ink;
+  border-bottom-width: 0;
+}
+
+.tooltip-bottom::after {
+  @apply -top-[6px] left-1/2 -translate-x-1/2 border-x-[6px] border-x-transparent border-b-[6px] border-b-lab-ink;
+  border-top-width: 0;
+}
+
+.tooltip-left::after {
+  @apply -right-[6px] top-1/2 -translate-y-1/2 border-y-[6px] border-y-transparent border-l-[6px] border-l-lab-ink;
+  border-right-width: 0;
+}
+
+.tooltip-right::after {
+  @apply -left-[6px] top-1/2 -translate-y-1/2 border-y-[6px] border-y-transparent border-r-[6px] border-r-lab-ink;
+  border-left-width: 0;
+}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import type { ComponentDefinition } from '../../playground';
 
 import { ComponentsPage } from './ComponentsPage';
@@ -40,25 +40,81 @@ const components: readonly ComponentDefinition[] = [
 ];
 
 describe('ComponentsPage', () => {
+  it('integrates the DataGrid demo with parent-controlled sorting, selection, and source tests', async () => {
+    const user = userEvent.setup();
+    const alert = vi.spyOn(window, 'alert').mockImplementation(() => {});
+    render(<ComponentsPage />);
+    await user.click(
+      within(screen.getByRole('navigation', { name: 'Components' })).getByRole('button', {
+        name: 'DataGrid',
+      }),
+    );
+    expect(screen.getAllByRole('row')[0]).toHaveTextContent('Alex Morgan');
+    await user.click(screen.getByText('Name', { exact: true }));
+    expect(screen.getAllByRole('row')[0]).toHaveTextContent('Taylor Kim');
+
+    const firstRow = screen.getAllByRole('row')[0]!;
+    await user.click(within(firstRow).getByRole('checkbox'));
+    expect(within(firstRow).getByRole('checkbox')).toBeChecked();
+    expect(alert).not.toHaveBeenCalled();
+    firstRow.focus();
+    await user.keyboard('{Enter}');
+    expect(alert).toHaveBeenCalledWith('Selected Taylor Kim. The onRowClick action was executed.');
+
+    await user.click(screen.getByRole('checkbox', { name: 'Loading' }));
+    expect(screen.getByRole('status')).toBeInTheDocument();
+    expect(screen.queryByRole('row')).not.toBeInTheDocument();
+    await user.click(screen.getByRole('checkbox', { name: 'Loading' }));
+    await user.click(screen.getByRole('checkbox', { name: 'Empty rows' }));
+    expect(screen.getByText('No data is available')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: 'Source' }));
+    const files = within(screen.getByRole('combobox', { name: 'File' }));
+    expect(files.getByRole('option', { name: 'DataGrid.test.tsx' })).toBeInTheDocument();
+    expect(
+      files.getByRole('option', { name: 'DataGrid.interactions.test.tsx' }),
+    ).toBeInTheDocument();
+  });
+
+  it('lists Spinner independently with its controls and source files', async () => {
+    const user = userEvent.setup();
+    render(<ComponentsPage />);
+    const sidebar = within(screen.getByRole('navigation', { name: 'Components' }));
+
+    await user.click(sidebar.getByRole('button', { name: 'Spinner' }));
+    expect(screen.getByRole('status')).toHaveAttribute('style', 'color: var(--primary);');
+
+    await user.clear(screen.getByRole('textbox', { name: 'Color' }));
+    await user.type(screen.getByRole('textbox', { name: 'Color' }), 'black');
+    expect(screen.getByRole('status')).toHaveAttribute('style', 'color: black;');
+
+    await user.click(screen.getByRole('button', { name: 'Source' }));
+    expect(
+      within(screen.getByRole('combobox', { name: 'File' }))
+        .getAllByRole('option')
+        .map((option) => option.textContent),
+    ).toEqual(['Spinner.tsx', 'Spinner.types.ts', 'Spinner.module.css', 'Spinner.test.tsx']);
+  });
+
   it('lists Tab and Tabs separately and shows only each component’s own source files', async () => {
     const user = userEvent.setup();
     render(<ComponentsPage />);
     const sidebar = within(screen.getByRole('navigation', { name: 'Components' }));
 
-    await user.click(sidebar.getByRole('button', { name: 'Tabs', exact: true }));
+    await user.click(sidebar.getByRole('button', { name: 'Tabs' }));
     const controls = within(screen.getByRole('region', { name: 'Controls' }));
     expect(controls.queryByRole('checkbox', { name: 'Full height' })).not.toBeInTheDocument();
     expect(controls.queryByText(/Selected tab:/)).not.toBeInTheDocument();
 
-    await user.click(screen.getByRole('button', { name: 'Source', exact: true }));
+    await user.click(screen.getByRole('button', { name: 'Source' }));
     expect(
       within(screen.getByRole('combobox', { name: 'File' }))
         .getAllByRole('option')
         .map((option) => option.textContent),
     ).toEqual(['Tabs.tsx', 'Tabs.types.ts', 'Tabs.module.css', 'Tabs.test.tsx']);
 
-    await user.click(sidebar.getByRole('button', { name: 'Tab', exact: true }));
-    await user.click(screen.getByRole('button', { name: 'Source', exact: true }));
+    await user.click(sidebar.getByRole('button', { name: 'Tab' }));
+    await user.click(screen.getByRole('button', { name: 'Source' }));
     expect(
       within(screen.getByRole('combobox', { name: 'File' }))
         .getAllByRole('option')

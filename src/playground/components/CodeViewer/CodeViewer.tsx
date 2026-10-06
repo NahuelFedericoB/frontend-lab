@@ -1,6 +1,7 @@
 import { useId, useState } from 'react';
 
 import type { SourceFile } from '../../types';
+import { CodeSnippet } from '../CodeSnippet/CodeSnippet';
 
 import styles from './CodeViewer.module.css';
 
@@ -65,15 +66,12 @@ export function CodeViewer({ usage, sources }: CodeViewerProps) {
           </div>
         )}
       </div>
-
       {code ? (
-        <pre
-          className={styles.code}
-          tabIndex={0}
-          aria-label={view === 'usage' ? 'Usage example' : `Source code: ${selectedSource?.name}`}
-        >
-          <code>{code}</code>
-        </pre>
+        <CodeSnippet
+          code={code}
+          file={view === 'usage' ? 'Usage.tsx' : selectedSource!.name}
+          label={view === 'usage' ? 'Usage example' : `Source code: ${selectedSource?.name}`}
+        />
       ) : (
         <p className={styles.empty}>
           {view === 'usage' ? 'No usage example available yet.' : 'No source code available yet.'}
