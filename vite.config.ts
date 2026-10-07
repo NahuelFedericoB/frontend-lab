@@ -2,7 +2,7 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  base: '/lab/',
+  base: './',
   plugins: [react()],
   test: {
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
@@ -10,7 +10,6 @@ export default defineConfig({
     setupFiles: ['./src/tests/setupTests.ts'],
     clearMocks: true,
     restoreMocks: true,
-    // Keep source-viewer imports as text instead of Vitest's CSS Module proxy.
     css: {
       include: [/\.css\?raw$/],
     },

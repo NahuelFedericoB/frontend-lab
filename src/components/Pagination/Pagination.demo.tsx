@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { ComponentViewer } from '../../playground/components/ComponentViewer/ComponentViewer';
 import type { SourceFile } from '../../playground/types';
+
 import { Pagination } from './Pagination';
 import { PaginationControls, type PaginationDemoOptions } from './PaginationControls';
 import componentSource from './Pagination.tsx?raw';

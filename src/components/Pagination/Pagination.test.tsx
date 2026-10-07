@@ -303,6 +303,46 @@ describe('<Pagination />', () => {
   });
 
   describe('when `pagesPerSegment` prop is defined', () => {
+    it('should include page 1 in the first segment of three pages', () => {
+      render(<Pagination pages={10} pagesPerSegment={3} />);
+
+      expect(
+        screen.getAllByRole('button', { name: /^\d+$/ }).map((page) => page.textContent),
+      ).toEqual(['1', '2', '3', '10']);
+    });
+
+    it('should include page 1 in the first segment of five pages', () => {
+      render(<Pagination pages={10} pagesPerSegment={5} />);
+
+      expect(
+        screen.getAllByRole('button', { name: /^\d+$/ }).map((page) => page.textContent),
+      ).toEqual(['1', '2', '3', '4', '5', '10']);
+    });
+
+    it('should include the last page in its segment without duplicating it', () => {
+      render(<Pagination pages={6} pagesPerSegment={3} activePage={6} />);
+
+      expect(
+        screen.getAllByRole('button', { name: /^\d+$/ }).map((page) => page.textContent),
+      ).toEqual(['1', '4', '5', '6']);
+      expect(screen.getByRole('button', { name: '6' })).toHaveClass(itemStyles.isActive!);
+    });
+
+    it('should not duplicate endpoints when all pages fit in one segment', () => {
+      render(<Pagination pages={3} pagesPerSegment={3} />);
+
+      expect(
+        screen.getAllByRole('button', { name: /^\d+$/ }).map((page) => page.textContent),
+      ).toEqual(['1', '2', '3']);
+    });
+
+    it('should render a single page only once', () => {
+      render(<Pagination pages={1} pagesPerSegment={1} />);
+
+      expect(screen.getAllByRole('button', { name: /^\d+$/ })).toHaveLength(1);
+      expect(screen.getByRole('button', { name: '1' })).toHaveClass(itemStyles.isActive!);
+    });
+
     it('should disable boundary actions at the first and last pages', () => {
       const onFirstClick = vi.fn();
       const onPrevClick = vi.fn();
@@ -367,7 +407,7 @@ describe('<Pagination />', () => {
     describe('when the user clicks the `next` button', () => {
       describe('and the active page is set to the page before the right ellipsis', () => {
         it('should move the active range to the right', () => {
-          let activePage = 4;
+          let activePage = 3;
           const setActivePage = (num: number) => (activePage = num);
           const { rerender } = render(
             <Pagination
@@ -377,14 +417,14 @@ describe('<Pagination />', () => {
               onNextClick={() => setActivePage(activePage + 1)}
             />,
           );
-          const pageBeforeEllipsis = screen.getByText('4');
+          const pageBeforeEllipsis = screen.getByText('3');
           const nextButton = screen.getByText('next');
           fireEvent.click(pageBeforeEllipsis);
 
           expect(screen.queryByText('1')).toBeInTheDocument();
           expect(screen.queryByText('2')).toBeInTheDocument();
           expect(screen.queryByText('3')).toBeInTheDocument();
-          expect(screen.queryByText('4')).toBeInTheDocument();
+          expect(screen.queryByText('4')).not.toBeInTheDocument();
           expect(screen.queryByText('5')).not.toBeInTheDocument();
           expect(screen.queryByText('6')).not.toBeInTheDocument();
           expect(screen.queryByText('7')).not.toBeInTheDocument();
@@ -398,10 +438,10 @@ describe('<Pagination />', () => {
           expect(screen.queryByText('1')).toBeInTheDocument();
           expect(screen.queryByText('2')).not.toBeInTheDocument();
           expect(screen.queryByText('3')).not.toBeInTheDocument();
-          expect(screen.queryByText('4')).not.toBeInTheDocument();
+          expect(screen.queryByText('4')).toBeInTheDocument();
           expect(screen.queryByText('5')).toBeInTheDocument();
           expect(screen.queryByText('6')).toBeInTheDocument();
-          expect(screen.queryByText('7')).toBeInTheDocument();
+          expect(screen.queryByText('7')).not.toBeInTheDocument();
           expect(screen.queryByText('8')).not.toBeInTheDocument();
           expect(screen.queryByText('9')).not.toBeInTheDocument();
           expect(screen.queryByText('10')).toBeInTheDocument();
@@ -419,11 +459,11 @@ describe('<Pagination />', () => {
               activePage={activePage}
               pages={10}
               pagesPerSegment={3}
-              onNextClick={() => setActivePage(5)}
-              onPrevClick={() => setActivePage(4)}
+              onNextClick={() => setActivePage(4)}
+              onPrevClick={() => setActivePage(3)}
             />,
           );
-          const pageBeforeEllipsis = screen.getByText('4');
+          const pageBeforeEllipsis = screen.getByText('3');
           const nextButton = screen.getByText('next');
 
           fireEvent.click(pageBeforeEllipsis);
@@ -433,17 +473,17 @@ describe('<Pagination />', () => {
               activePage={activePage}
               pages={10}
               pagesPerSegment={3}
-              onPrevClick={() => setActivePage(4)}
+              onPrevClick={() => setActivePage(3)}
             />,
           );
 
           expect(screen.queryByText('1')).toBeInTheDocument();
           expect(screen.queryByText('2')).not.toBeInTheDocument();
           expect(screen.queryByText('3')).not.toBeInTheDocument();
-          expect(screen.queryByText('4')).not.toBeInTheDocument();
+          expect(screen.queryByText('4')).toBeInTheDocument();
           expect(screen.queryByText('5')).toBeInTheDocument();
           expect(screen.queryByText('6')).toBeInTheDocument();
-          expect(screen.queryByText('7')).toBeInTheDocument();
+          expect(screen.queryByText('7')).not.toBeInTheDocument();
           expect(screen.queryByText('8')).not.toBeInTheDocument();
           expect(screen.queryByText('9')).not.toBeInTheDocument();
           expect(screen.queryByText('10')).toBeInTheDocument();
@@ -454,7 +494,7 @@ describe('<Pagination />', () => {
           expect(screen.queryByText('1')).toBeInTheDocument();
           expect(screen.queryByText('2')).toBeInTheDocument();
           expect(screen.queryByText('3')).toBeInTheDocument();
-          expect(screen.queryByText('4')).toBeInTheDocument();
+          expect(screen.queryByText('4')).not.toBeInTheDocument();
           expect(screen.queryByText('5')).not.toBeInTheDocument();
           expect(screen.queryByText('6')).not.toBeInTheDocument();
           expect(screen.queryByText('7')).not.toBeInTheDocument();
@@ -497,8 +537,8 @@ describe('<Pagination />', () => {
         expect(screen.queryByText('5')).not.toBeInTheDocument();
         expect(screen.queryByText('6')).not.toBeInTheDocument();
         expect(screen.queryByText('7')).not.toBeInTheDocument();
-        expect(screen.queryByText('8')).toBeInTheDocument();
-        expect(screen.queryByText('9')).toBeInTheDocument();
+        expect(screen.queryByText('8')).not.toBeInTheDocument();
+        expect(screen.queryByText('9')).not.toBeInTheDocument();
         expect(screen.queryByText('10')).toBeInTheDocument();
 
         fireEvent.click(screen.getByText('first'));
@@ -507,7 +547,7 @@ describe('<Pagination />', () => {
         expect(screen.queryByText('1')).toBeInTheDocument();
         expect(screen.queryByText('2')).toBeInTheDocument();
         expect(screen.queryByText('3')).toBeInTheDocument();
-        expect(screen.queryByText('4')).toBeInTheDocument();
+        expect(screen.queryByText('4')).not.toBeInTheDocument();
         expect(screen.queryByText('5')).not.toBeInTheDocument();
         expect(screen.queryByText('6')).not.toBeInTheDocument();
         expect(screen.queryByText('7')).not.toBeInTheDocument();
@@ -541,8 +581,8 @@ describe('<Pagination />', () => {
         expect(queryByText('5')).not.toBeInTheDocument();
         expect(queryByText('6')).not.toBeInTheDocument();
         expect(queryByText('7')).not.toBeInTheDocument();
-        expect(queryByText('8')).toBeInTheDocument();
-        expect(queryByText('9')).toBeInTheDocument();
+        expect(queryByText('8')).not.toBeInTheDocument();
+        expect(queryByText('9')).not.toBeInTheDocument();
         expect(queryByText('10')).toBeInTheDocument();
       });
     });
@@ -557,10 +597,10 @@ describe('<Pagination />', () => {
           activePage={activePage}
           pages={10}
           pagesPerSegment={3}
-          onNextClick={() => setActivePage(5)}
+          onNextClick={() => setActivePage(4)}
         />,
       );
-      const pageBeforeEllipsis = getByText('4');
+      const pageBeforeEllipsis = getByText('3');
       const nextButton = getByText('next');
 
       fireEvent.click(pageBeforeEllipsis);
@@ -577,10 +617,10 @@ describe('<Pagination />', () => {
       expect(queryByText('1')).toBeInTheDocument();
       expect(queryByText('2')).not.toBeInTheDocument();
       expect(queryByText('3')).not.toBeInTheDocument();
-      expect(queryByText('4')).not.toBeInTheDocument();
+      expect(queryByText('4')).toBeInTheDocument();
       expect(queryByText('5')).toBeInTheDocument();
       expect(queryByText('6')).toBeInTheDocument();
-      expect(queryByText('7')).toBeInTheDocument();
+      expect(queryByText('7')).not.toBeInTheDocument();
       expect(queryByText('8')).not.toBeInTheDocument();
       expect(queryByText('9')).not.toBeInTheDocument();
       expect(queryByText('10')).toBeInTheDocument();
@@ -591,7 +631,7 @@ describe('<Pagination />', () => {
       expect(queryByText('1')).toBeInTheDocument();
       expect(queryByText('2')).toBeInTheDocument();
       expect(queryByText('3')).toBeInTheDocument();
-      expect(queryByText('4')).toBeInTheDocument();
+      expect(queryByText('4')).not.toBeInTheDocument();
       expect(queryByText('5')).not.toBeInTheDocument();
       expect(queryByText('6')).not.toBeInTheDocument();
       expect(queryByText('7')).not.toBeInTheDocument();
@@ -618,7 +658,7 @@ describe('<Pagination />', () => {
       expect(queryByText('1')).toBeInTheDocument();
       expect(queryByText('2')).toBeInTheDocument();
       expect(queryByText('3')).toBeInTheDocument();
-      expect(queryByText('4')).toBeInTheDocument();
+      expect(queryByText('4')).not.toBeInTheDocument();
       expect(queryByText('5')).not.toBeInTheDocument();
       expect(queryByText('6')).not.toBeInTheDocument();
       expect(queryByText('7')).not.toBeInTheDocument();
@@ -636,8 +676,8 @@ describe('<Pagination />', () => {
       expect(queryByText('5')).not.toBeInTheDocument();
       expect(queryByText('6')).not.toBeInTheDocument();
       expect(queryByText('7')).not.toBeInTheDocument();
-      expect(queryByText('8')).toBeInTheDocument();
-      expect(queryByText('9')).toBeInTheDocument();
+      expect(queryByText('8')).not.toBeInTheDocument();
+      expect(queryByText('9')).not.toBeInTheDocument();
       expect(queryByText('10')).toBeInTheDocument();
     });
   });

@@ -49,11 +49,11 @@ describe('ComponentsPage', () => {
     const pagination = within(screen.getByRole('list', { name: 'Pagination' }));
     expect(pagination.getByRole('button', { name: 'first' })).toBeDisabled();
 
-    await user.click(pagination.getByRole('button', { name: '4' }));
+    await user.click(pagination.getByRole('button', { name: '3' }));
     pagination.getByRole('button', { name: 'next' }).focus();
     await user.keyboard('{Enter}');
-    expect(pagination.getByRole('button', { name: '5' })).toBeInTheDocument();
-    expect(pagination.queryByRole('button', { name: '4' })).not.toBeInTheDocument();
+    expect(pagination.getByRole('button', { name: '4' })).toBeInTheDocument();
+    expect(pagination.queryByRole('button', { name: '3' })).not.toBeInTheDocument();
 
     await user.click(pagination.getByRole('button', { name: 'last' }));
     expect(pagination.getByRole('button', { name: 'next' })).toBeDisabled();

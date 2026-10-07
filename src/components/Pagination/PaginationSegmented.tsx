@@ -1,5 +1,6 @@
 import noop from '../../utils/noop';
 import chunk from '../../utils/chunk';
+
 import { PaginationBoundary } from './PaginationBoundary';
 import { PaginationItem } from './PaginationItem';
 import { PaginationEllipsis } from './PaginationEllipsis';
@@ -33,7 +34,7 @@ export function PaginationSegmented({
   const firstPage = 1;
   const lastPage = pages;
   const range = chunk(
-    Array.from({ length: pages - 2 }, (_, index) => index + 2),
+    Array.from({ length: pages }, (_, index) => index + 1),
     pagesPerSegment,
   );
   const activePagePosition = getActivePageRangePosition(activePage, lastPage, range);
@@ -56,12 +57,9 @@ export function PaginationSegmented({
         isDisabled={activePage === firstPage}
         onClick={onPrevClick}
       />
-      <PaginationItem
-        size={size}
-        pageNumber={firstPage}
-        isActive={firstPage === activePage}
-        onClick={onPageClick}
-      />
+      {activePagePosition !== 0 && (
+        <PaginationItem size={size} pageNumber={firstPage} onClick={onPageClick} />
+      )}
       <PaginationEllipsis size={size} isVisible={activePagePosition !== 0} />
       {range[activePagePosition]?.map((page) => (
         <PaginationItem
@@ -73,12 +71,9 @@ export function PaginationSegmented({
         />
       ))}
       <PaginationEllipsis size={size} isVisible={activePagePosition !== range.length - 1} />
-      <PaginationItem
-        size={size}
-        pageNumber={lastPage}
-        isActive={lastPage === activePage}
-        onClick={onPageClick}
-      />
+      {activePagePosition !== range.length - 1 && (
+        <PaginationItem size={size} pageNumber={lastPage} onClick={onPageClick} />
+      )}
       <PaginationBoundary
         size={size}
         position="next"
