@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+
 import { LabHeader } from './layout/LabHeader/LabHeader';
 import { ComponentsPage } from './pages/Components/ComponentsPage';
+
 import styles from './App.module.css';
 
 interface AppProps {
