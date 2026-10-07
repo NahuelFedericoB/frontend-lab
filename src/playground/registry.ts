@@ -8,7 +8,6 @@ import { SpinnerDemo } from '../components/Spinner/Spinner.demo';
 import { PaginationDemo } from '../components/Pagination/Pagination.demo';
 import type { ComponentDefinition } from './types';
 
-// Add each reviewed React component here with its dedicated demo.
 export const componentRegistry: readonly ComponentDefinition[] = [
   {
     slug: 'button',

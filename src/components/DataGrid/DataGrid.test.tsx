@@ -513,7 +513,6 @@ describe('<DataGrid />', () => {
           const dragStartEvent = createEvent.dragStart(nameColumn);
           const dragOverEvent = createEvent.dragOver(nameColumn);
 
-          // mock dataTransfer since it's not available in JSDOM
           Object.defineProperty(dragStartEvent, 'dataTransfer', {
             value: {
               getData: vi.fn(),
@@ -546,7 +545,6 @@ describe('<DataGrid />', () => {
           const dragOverEvent = createEvent.dragOver(nameColumn);
           const dragLeaveEvent = createEvent.dragLeave(nameColumn);
 
-          // mock dataTransfer since it's not available in JSDOM
           Object.defineProperty(dragStartEvent, 'dataTransfer', {
             value: {
               getData: vi.fn(),
@@ -599,7 +597,6 @@ describe('<DataGrid />', () => {
         expect(tableHeaders[1]).toHaveTextContent('Name');
         expect(tableHeaders[2]).toHaveTextContent('Status');
 
-        // mock dataTransfer since it's not available in JSDOM
         Object.defineProperty(dragStartEvent, 'dataTransfer', {
           value: {
             getData: vi.fn(),

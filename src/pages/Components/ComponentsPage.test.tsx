@@ -6,7 +6,6 @@ import type { ComponentDefinition } from '../../playground';
 
 import { ComponentsPage } from './ComponentsPage';
 
-// These fixtures verify the explorer; they are not published library components.
 function EditableDemoFixture() {
   const [value, setValue] = useState('Initial value');
 
