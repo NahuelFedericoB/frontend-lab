@@ -1,0 +1,70 @@
+.switchButton {
+  @apply relative grid h-[36px] cursor-pointer items-center justify-center overflow-hidden rounded-[2.1875rem] border border-solid border-lab-border bg-lab-sky-soft text-center text-base outline-none;
+  grid-template-columns: 50% 50%;
+}
+
+.switchButton:focus {
+  @apply outline outline-2 -outline-offset-1 outline-lab-sky;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.foreground {
+  @apply absolute flex h-full w-1/2 flex-row items-center justify-center rounded-[2.1875rem] bg-lab-link text-lab-ink;
+  transition: all 0.15s ease-out;
+}
+
+.switchLeft {
+  transform: translateX(0%);
+}
+
+.switchRight {
+  transform: translateX(100%);
+}
+
+.leftSide {
+  @apply z-10;
+}
+
+.rightSide {
+  @apply z-10;
+}
+
+.size-xs {
+  @apply h-5 w-[200px] text-xs;
+}
+
+.size-sm {
+  @apply h-[30px] w-[200px] text-sm;
+}
+
+.size-md {
+  @apply h-[36px] w-[240px] text-base;
+}
+
+.size-lg {
+  @apply h-11 w-[300px] text-lg;
+}
+
+.activeFont {
+  @apply text-lab-white;
+}
+
+.disabled {
+  @apply pointer-events-none text-lab-muted opacity-100;
+}
+
+.disabledLeft {
+  @apply bg-lab-border;
+}
+
+.disabledLeft ~ .activeFont {
+  @apply text-lab-muted;
+}
+
+.disabledRight {
+  @apply bg-lab-border;
+}
+
+.disabledRight ~ .activeFont {
+  @apply text-lab-muted;
+}

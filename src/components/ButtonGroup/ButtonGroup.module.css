@@ -1,0 +1,7 @@
+.buttonGroup {
+  @apply inline-flex flex-row rounded border border-solid border-lab-border bg-lab-white;
+}
+
+.vertical {
+  @apply flex-col;
+}

@@ -1,0 +1,3 @@
+.preview {
+  @apply min-h-[280px] w-full max-w-sm;
+}

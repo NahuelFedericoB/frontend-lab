@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ButtonGroup /> > should render correctly 1`] = `
+<div>
+  <div
+    class="_buttonGroup_db62b8"
+  >
+    ButtonGroup
+  </div>
+</div>
+`;

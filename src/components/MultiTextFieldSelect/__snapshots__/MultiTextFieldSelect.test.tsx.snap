@@ -1,0 +1,114 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MultiTextFieldSelect > should render correctly 1`] = `
+<div>
+  <div
+    class="_textFieldSelectContainer_14a559"
+  >
+    <input
+      aria-hidden="true"
+      tabindex="-1"
+      type="hidden"
+      value=""
+    />
+    <input
+      aria-readonly="false"
+      autocomplete="off"
+      class="_textField_56f0e2 _size-md_56f0e2 _textFieldInput_14a559 _addSpace_14a559 _size-md_14a559"
+      list=""
+      placeholder="Search..."
+      type="text"
+      value=""
+    />
+    <i
+      aria-hidden="true"
+      class="_arrow_14a559 _arrow-md_14a559"
+    >
+      <svg
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m6 9 6 6 6-6"
+        />
+      </svg>
+    </i>
+    <datalist
+      class="_dataList_14a559"
+      style="display: none;"
+    >
+      <div
+        aria-hidden="false"
+        class="_dropdownOption_14a559 _size-md_14a559"
+        data-value="1"
+        tabindex="-1"
+      >
+        <div
+          class="_checkboxContainer_14a559"
+        >
+          <input
+            aria-checked="false"
+            class="_checkbox_2d475f _size-md_2d475f _checkbox_14a559"
+            id="1"
+            type="checkbox"
+          />
+          <label
+            class="_label_f9fc7e _size-md_f9fc7e _label_14a559"
+            for="1"
+          >
+            Barry
+          </label>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="_dropdownOption_14a559 _size-md_14a559"
+        data-value="2"
+        tabindex="-1"
+      >
+        <div
+          class="_checkboxContainer_14a559"
+        >
+          <input
+            aria-checked="false"
+            class="_checkbox_2d475f _size-md_2d475f _checkbox_14a559"
+            id="2"
+            type="checkbox"
+          />
+          <label
+            class="_label_f9fc7e _size-md_f9fc7e _label_14a559"
+            for="2"
+          >
+            John
+          </label>
+        </div>
+      </div>
+      <div
+        aria-hidden="false"
+        class="_dropdownOption_14a559 _size-md_14a559"
+        data-value="3"
+        tabindex="-1"
+      >
+        <div
+          class="_checkboxContainer_14a559"
+        >
+          <input
+            aria-checked="false"
+            class="_checkbox_2d475f _size-md_2d475f _checkbox_14a559"
+            id="3"
+            type="checkbox"
+          />
+          <label
+            class="_label_f9fc7e _size-md_f9fc7e _label_14a559"
+            for="3"
+          >
+            Jane
+          </label>
+        </div>
+      </div>
+    </datalist>
+  </div>
+</div>
+`;

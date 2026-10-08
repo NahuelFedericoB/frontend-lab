@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<SwitchButton /> > should render correctly 1`] = `
+<div>
+  <div
+    class="_switchButton_0511b6 _size-md_0511b6"
+    role="button"
+    tabindex="0"
+  >
+    <div
+      class="_foreground_0511b6 _switchLeft_0511b6"
+    />
+    <span
+      class="_leftSide_0511b6 _activeFont_0511b6"
+    >
+      left
+    </span>
+    <span
+      class="_rightSide_0511b6"
+    >
+      right
+    </span>
+  </div>
+</div>
+`;

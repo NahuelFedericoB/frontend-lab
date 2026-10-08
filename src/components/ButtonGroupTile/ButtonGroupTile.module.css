@@ -1,0 +1,56 @@
+.buttonGroupTile {
+  @apply h-full cursor-pointer border-0 border-r border-solid border-r-lab-border bg-transparent text-lab-link transition-shadow duration-100;
+}
+
+.buttonGroupTile:hover {
+  @apply bg-lab-sky-soft;
+}
+
+.buttonGroupTile:focus {
+  @apply outline outline-2 outline-lab-sky;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.buttonGroupTile:first-child {
+  @apply rounded-bl rounded-tl;
+}
+
+.buttonGroupTile:last-child {
+  @apply rounded-br rounded-tr border-none;
+}
+
+.size-sm {
+  @apply px-[8px] py-[2.5px];
+}
+
+.size-md {
+  @apply px-[12px] py-[6px];
+}
+
+.size-lg {
+  @apply px-[16px] py-[11px];
+}
+
+.vertical {
+  @apply border-b border-l-0 border-r-0 border-t-0 border-b-lab-border;
+}
+
+.vertical:first-child {
+  @apply rounded-none rounded-tl rounded-tr;
+}
+
+.vertical:last-child {
+  @apply rounded-none rounded-bl rounded-br border-none;
+}
+
+.vertical:only-child {
+  @apply rounded;
+}
+
+.disabled {
+  @apply pointer-events-none bg-lab-sky-soft text-lab-muted;
+}
+
+.active {
+  @apply bg-lab-sky-soft;
+}

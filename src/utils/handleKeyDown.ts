@@ -1,6 +1,6 @@
 import type { KeyboardEvent } from 'react';
 
-export default function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>) {
+export default function handleKeyDown(event: KeyboardEvent<HTMLElement>) {
   if (event.key === 'Tab') {
     return;
   }

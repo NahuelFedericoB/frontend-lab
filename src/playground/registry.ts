@@ -1,6 +1,10 @@
 import { CheckboxDemo } from '../components/Checkbox/Checkbox.demo';
+import { MultiTextFieldSelectDemo } from '../components/MultiTextFieldSelect/MultiTextFieldSelect.demo';
+import { SwitchButtonDemo } from '../components/SwitchButton/SwitchButton.demo';
 import { TooltipDemo } from '../components/Tooltip/Tooltip.demo';
 import { ButtonDemo } from '../components/Button/Button.demo';
+import { ButtonGroupDemo } from '../components/ButtonGroup/ButtonGroup.demo';
+import { ButtonGroupTileDemo } from '../components/ButtonGroupTile/ButtonGroupTile.demo';
 import { TabDemo } from '../components/Tab/Tab.demo';
 import { TabsDemo } from '../components/Tabs/Tabs.demo';
 import { DataGridDemo } from '../components/DataGrid/DataGrid.demo';
@@ -17,12 +21,43 @@ export const componentRegistry: readonly ComponentDefinition[] = [
     Demo: ButtonDemo,
   },
   {
+    slug: 'button-group',
+    name: 'ButtonGroup',
+    description: 'A group of buttons arranged horizontally or vertically with custom content.',
+    category: 'Actions',
+    Demo: ButtonGroupDemo,
+  },
+  {
+    slug: 'button-group-tile',
+    name: 'ButtonGroupTile',
+    description:
+      'An individual button tile with three sizes, active and disabled states, and keyboard interaction.',
+    category: 'Actions',
+    Demo: ButtonGroupTileDemo,
+  },
+  {
     slug: 'checkbox',
     name: 'Checkbox',
     description:
       'A checkbox with three sizes, validation styles, and disabled and indeterminate states.',
     category: 'Inputs',
     Demo: CheckboxDemo,
+  },
+  {
+    slug: 'multi-text-field-select',
+    name: 'MultiTextFieldSelect',
+    description:
+      'A searchable multi-select field with keyboard navigation, three sizes, and optional clearing.',
+    category: 'Inputs',
+    Demo: MultiTextFieldSelectDemo,
+  },
+  {
+    slug: 'switch-button',
+    name: 'SwitchButton',
+    description:
+      'A controlled two-sided switch with custom labels, four sizes, and keyboard interaction.',
+    category: 'Inputs',
+    Demo: SwitchButtonDemo,
   },
   {
     slug: 'tabs',

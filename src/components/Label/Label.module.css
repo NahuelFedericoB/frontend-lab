@@ -1,0 +1,31 @@
+.label {
+  @apply mb-2 inline-block p-0 font-semibold text-lab-ink;
+}
+
+.size-sm {
+  @apply text-sm;
+}
+
+.size-md {
+  @apply text-base;
+}
+
+.size-lg {
+  @apply text-xl;
+}
+
+.check {
+  @apply mb-0;
+}
+
+.required {
+  @apply relative;
+}
+
+.required::after {
+  @apply absolute -right-[14px] -top-1 text-[#b42318] content-['*'];
+}
+
+.disabled {
+  @apply text-lab-muted;
+}

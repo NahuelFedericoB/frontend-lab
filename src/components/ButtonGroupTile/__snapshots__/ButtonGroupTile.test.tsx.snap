@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ButtonGroupTile /> > should render correctly 1`] = `
+<div>
+  <div
+    aria-disabled="false"
+    class="_buttonGroupTile_6d76bc _size-md_6d76bc"
+    role="button"
+    tabindex="0"
+  >
+    ButtonGroupTile
+  </div>
+</div>
+`;

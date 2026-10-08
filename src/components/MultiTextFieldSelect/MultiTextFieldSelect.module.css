@@ -1,0 +1,153 @@
+.textFieldSelectContainer {
+  @apply relative;
+}
+
+.textFieldInput {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.textFieldSelectContainer .textFieldInput.size-sm {
+  @apply pr-[38px];
+}
+
+.textFieldSelectContainer .textFieldInput.size-md {
+  @apply pr-10;
+}
+
+.textFieldSelectContainer .textFieldInput.size-lg {
+  @apply pr-[42px];
+}
+
+.textFieldSelectContainer .textFieldInput.addSpace.size-sm {
+  @apply pr-[55px];
+}
+
+.textFieldSelectContainer .textFieldInput.addSpace.size-md {
+  @apply pr-[62px];
+}
+
+.textFieldSelectContainer .textFieldInput.addSpace.size-lg {
+  @apply pr-[70px];
+}
+
+.textFieldSelectContainer.clearIconPadding > .textFieldInput {
+  @apply pr-[60px];
+}
+
+.textFieldSelectContainer .textFieldInput[readonly] {
+  @apply border border-solid border-lab-border;
+}
+
+.textFieldSelectContainer .textFieldInput[readonly].size-sm {
+  @apply pl-2;
+}
+
+.textFieldSelectContainer .textFieldInput[readonly].size-md {
+  @apply pl-3;
+}
+
+.textFieldSelectContainer .textFieldInput[readonly].size-lg {
+  @apply pl-4;
+}
+
+.textFieldSelectContainer.clearIconPadding > .textFieldInput.size-lg {
+  @apply pr-[70px];
+}
+
+.arrow {
+  @apply pointer-events-none absolute right-[15px] top-1/2 flex -translate-y-1/2 items-center justify-center leading-none text-lab-muted;
+}
+
+.arrow svg {
+  @apply block h-[1em] w-[1em];
+}
+
+.arrow-sm {
+  @apply text-sm;
+}
+
+.arrow-md {
+  @apply text-base;
+}
+
+.arrow-lg {
+  @apply text-lg;
+}
+
+.dataList {
+  @apply absolute z-10 mt-[6px] max-h-[300px] w-full overflow-y-auto rounded border border-solid border-lab-border bg-lab-white bg-clip-padding align-baseline text-lab-ink;
+  box-shadow: 0 4px 11px rgb(0 0 0 / 0.1);
+}
+
+.dropdownOption {
+  @apply flex flex-row items-center px-3;
+}
+
+.dropdownOption.size-sm {
+  @apply h-[31px] text-sm;
+}
+
+.dropdownOption.size-md {
+  @apply h-[38px] text-base;
+}
+
+.dropdownOption.size-lg {
+  @apply h-12 text-lg;
+}
+
+.checkboxContainer {
+  @apply pointer-events-none flex flex-row items-center overflow-hidden text-ellipsis whitespace-nowrap;
+}
+
+.active {
+  @apply bg-lab-link text-lab-white;
+}
+
+.clearIcon {
+  @apply absolute right-[35px] top-[7px] flex h-[26px] w-[26px] cursor-pointer flex-row items-center justify-center text-center text-lab-muted;
+}
+
+.clearIcon svg {
+  @apply pointer-events-none h-[1em] w-[1em];
+}
+
+.clearIcon:focus,
+.clearIcon:hover {
+  @apply rounded-full border-lab-sky bg-lab-sky-soft;
+}
+
+.clearIcon-size-sm {
+  @apply h-[19px] w-[19px] text-sm;
+}
+
+.clearIcon-size-md {
+  @apply h-[26px] w-[26px] text-base;
+}
+
+.clearIcon-size-lg {
+  @apply top-3 mr-[5px] h-[26px] w-[26px] text-base;
+}
+
+.highlight {
+  @apply bg-lab-link text-lab-white;
+}
+
+.highlight .label {
+  @apply text-lab-white;
+}
+
+.noOptionsMessage {
+  @apply flex flex-row items-center justify-center rounded bg-lab-white p-3 text-base text-lab-muted;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdownOption .checkbox {
+  @apply top-0 mr-2;
+}
+
+.dropdownOption .label {
+  @apply mb-0 overflow-hidden text-ellipsis whitespace-nowrap;
+}

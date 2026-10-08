@@ -1,0 +1,50 @@
+.textField {
+  @apply m-0 block w-full overflow-hidden text-ellipsis whitespace-nowrap rounded border border-solid border-lab-border bg-lab-white bg-clip-padding text-lab-ink transition-shadow duration-100 ease-in-out;
+}
+
+.textField:focus {
+  @apply bg-lab-white text-lab-ink outline outline-2 -outline-offset-2 outline-lab-sky;
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--lab-sky) 25%, transparent);
+}
+
+.textField::placeholder {
+  @apply text-lab-muted;
+}
+
+.valid {
+  border-color: #187048;
+}
+
+.valid:focus {
+  @apply outline-green-300;
+  box-shadow: 0 0 0 0.2rem rgb(24 112 72 / 0.25);
+}
+
+.invalid {
+  border-color: #b42318;
+}
+
+.invalid:focus {
+  @apply outline-red-300;
+  box-shadow: 0 0 0 0.2rem rgb(180 35 24 / 0.25);
+}
+
+.textField:disabled {
+  @apply bg-lab-sky-soft;
+}
+
+.textField:read-only:not(:disabled) {
+  @apply border-none bg-transparent pl-0 caret-transparent;
+}
+
+.size-sm {
+  @apply h-[31px] rounded-[0.2rem] px-2 py-1 text-sm;
+}
+
+.size-md {
+  @apply h-[38px] px-3 py-[0.375rem] text-base;
+}
+
+.size-lg {
+  @apply h-12 rounded-[0.3rem] px-4 py-2 text-xl;
+}
