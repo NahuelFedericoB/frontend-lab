@@ -456,3 +456,13 @@ https://github.com/NahuelFedericoB
 
 Portfolio:
 https://portfolio-nfb.vercel.app/
+
+## Copyright
+
+© 2026 Nahuel Bordon. All rights reserved.
+
+This project, including its source code, component implementations, design, documentation, and original content, is the intellectual property of Nahuel Bordon.
+
+The repository is publicly available for educational, demonstration, and professional evaluation purposes. No license is granted to copy, modify, redistribute, publish, or commercially use this project or substantial portions of its source code without prior written permission from the author.
+
+Third-party libraries and dependencies remain subject to their respective licenses.
