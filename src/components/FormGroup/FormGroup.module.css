@@ -1,0 +1,70 @@
+.formGroup {
+  @apply mb-4 min-w-0 border-none p-0;
+}
+
+.inline {
+  @apply m-0 flex-row items-center gap-x-2;
+  display: flex;
+}
+
+.inline > label {
+  @apply m-0;
+}
+
+.inline > input:read-only {
+  @apply pl-0;
+}
+
+.check {
+  @apply relative block min-h-6 pl-6;
+}
+
+.hint {
+  @apply mt-1 block text-[80%] font-normal text-lab-ink;
+}
+
+.hintcolor-primary {
+  @apply text-lab-sky;
+}
+
+.hintcolor-secondary {
+  @apply text-lab-link;
+}
+
+.hintcolor-success {
+  color: #187048;
+}
+
+.hintcolor-danger {
+  color: #b42318;
+}
+
+.hintcolor-warning {
+  @apply text-lab-sun;
+}
+
+.hintcolor-info {
+  @apply text-lab-sky;
+}
+
+.hintcolor-dark {
+  @apply text-lab-ink;
+}
+
+.error {
+  color: #b42318;
+}
+
+.error input,
+.error select,
+.error :global(.datePicker > .input),
+.error :global(.datePicker > .input > input:read-only) {
+  border-color: #b42318;
+}
+
+.error input:focus,
+.error select:focus,
+.error :global(.datePicker > .input):focus {
+  @apply outline outline-2 -outline-offset-2 outline-red-300;
+  box-shadow: 0 0 0 0.2rem rgb(180 35 24 / 0.25);
+}

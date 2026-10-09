@@ -1,4 +1,8 @@
 import { CheckboxDemo } from '../components/Checkbox/Checkbox.demo';
+import { FormGroupDemo } from '../components/FormGroup/FormGroup.demo';
+import { LabelDemo } from '../components/Label/Label.demo';
+import { PasswordFieldDemo } from '../components/PasswordField/PasswordField.demo';
+import { TextFieldDemo } from '../components/TextField/TextField.demo';
 import { MultiTextFieldSelectDemo } from '../components/MultiTextFieldSelect/MultiTextFieldSelect.demo';
 import { SwitchButtonDemo } from '../components/SwitchButton/SwitchButton.demo';
 import { TooltipDemo } from '../components/Tooltip/Tooltip.demo';
@@ -10,6 +14,7 @@ import { TabsDemo } from '../components/Tabs/Tabs.demo';
 import { DataGridDemo } from '../components/DataGrid/DataGrid.demo';
 import { SpinnerDemo } from '../components/Spinner/Spinner.demo';
 import { PaginationDemo } from '../components/Pagination/Pagination.demo';
+
 import type { ComponentDefinition } from './types';
 
 export const componentRegistry: readonly ComponentDefinition[] = [
@@ -42,6 +47,36 @@ export const componentRegistry: readonly ComponentDefinition[] = [
       'A checkbox with three sizes, validation styles, and disabled and indeterminate states.',
     category: 'Inputs',
     Demo: CheckboxDemo,
+  },
+  {
+    slug: 'form-group',
+    name: 'FormGroup',
+    description:
+      'A field group with a label, helper text, and error styles, composed in a sign-in form.',
+    category: 'Inputs',
+    Demo: FormGroupDemo,
+  },
+  {
+    slug: 'label',
+    name: 'Label',
+    description: 'A label linked to its field, with three sizes and required and disabled styles.',
+    category: 'Inputs',
+    Demo: LabelDemo,
+  },
+  {
+    slug: 'text-field',
+    name: 'TextField',
+    description:
+      'A text input with three sizes, validation styles, and disabled and read-only states.',
+    category: 'Inputs',
+    Demo: TextFieldDemo,
+  },
+  {
+    slug: 'password-field',
+    name: 'PasswordField',
+    description: 'A password input with a visibility toggle, three sizes, and validation styles.',
+    category: 'Inputs',
+    Demo: PasswordFieldDemo,
   },
   {
     slug: 'multi-text-field-select',

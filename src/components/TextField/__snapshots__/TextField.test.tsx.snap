@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<TextField /> > should render correctly 1`] = `
+<div>
+  <input
+    aria-readonly="false"
+    autocomplete="off"
+    class="_textField_56f0e2 _size-md_56f0e2"
+    placeholder="Placeholder"
+    type="text"
+    value=""
+  />
+</div>
+`;

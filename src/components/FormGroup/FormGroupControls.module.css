@@ -1,0 +1,28 @@
+.controls {
+  @apply flex flex-col gap-4;
+}
+
+.field {
+  @apply flex min-w-0 flex-col gap-2 text-sm text-lab-ink;
+}
+
+.field > span {
+  @apply font-medium;
+}
+
+.field input,
+.field select {
+  @apply min-h-[38px] w-full min-w-0 rounded-md bg-lab-white px-3 py-2 text-sm text-lab-ink;
+  border: 1px solid var(--lab-border);
+}
+
+.field select {
+  @apply appearance-none bg-no-repeat pr-10;
+  background-image: url('../../assets/icons/chevron-down.svg');
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.field select:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-lab-link;
+}
